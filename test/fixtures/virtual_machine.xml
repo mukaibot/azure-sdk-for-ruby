@@ -78,8 +78,8 @@ kZS1mYWNlNSI+DQogICAgPEluc3RhbmNlcyBjb3VudD0iMSIgLz4NCiAgPC9Sb2xlPg0KPC9TZXJ2aWN
               <Vip>137.117.17.187</Vip>
             </InputEndpoint>
           </InputEndpoints>
-           <SubnetNames>
-            <SubnetName>test-subnet</SubnetName>
+          <SubnetNames>
+            <SubnetName>Test-Subnet</SubnetName>
           </SubnetNames>
         </ConfigurationSet>
       </ConfigurationSets>
