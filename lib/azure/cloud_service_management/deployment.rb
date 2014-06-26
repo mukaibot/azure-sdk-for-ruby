@@ -47,7 +47,7 @@ module Azure
         end
       end
 
-      def is_transitioning
+      def is_transitioning?
         return status.casecmp("runningtransitioning") == 0
       end
 

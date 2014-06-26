@@ -190,6 +190,7 @@ module Azure
           info_msg = "Upgrading deployment #{options[:name]} on #{cloud_service_name} cloud service."
           error_msg_body = "Deployment #{options[:name]} on cloud service #{cloud_service_name}"
         end
+        options[:label] = "#{slot} deployment #{cloud_service_name}" if options[:label].nil?
         
         # 2. Get the current deployment so one can verify that it can be upgraded
         options[:no_exit_on_failure] = true
@@ -198,7 +199,11 @@ module Azure
         # 3. Upgrade the deployment if it is in a state where it can be upgraded
         if !deployment.exists?
           Loggerx.error_with_exit "#{error_msg_body} does not exist, and therefore cannot be upgraded."
+<<<<<<< HEAD
         elsif deployment.is_transitioning
+=======
+        elsif deployment.is_transitioning?
+>>>>>>> Add 3 new web hooks inside "cloud_service_management_service.rb":
           Loggerx.error_with_exit "#{error_msg_body} is currently transitioning. Wait until it is done transitioning before doing an upgrade."
         else
           Loggerx.info info_msg
