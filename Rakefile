@@ -15,7 +15,7 @@
 require "rake/testtask"
 require "rubygems/package_task"
 
-gem_spec = eval(File.read("./azure.gemspec"))
+gem_spec = eval(File.read("./azurex.gemspec"))
 Gem::PackageTask.new(gem_spec) do |pkg|
   pkg.need_zip = false
   pkg.need_tar = false
@@ -26,17 +26,13 @@ namespace :test do
     unset_environment = [
       ENV.fetch("AZURE_STORAGE_ACCOUNT",  nil),
       ENV.fetch("AZURE_STORAGE_ACCESS_KEY",    nil),
-      # ENV.fetch("AZURE_STORAGE_TABLE_HOST",    nil),
-      # ENV.fetch("AZURE_STORAGE_BLOB_HOST",     nil),
-      # ENV.fetch("AZURE_STORAGE_QUEUE_HOST",    nil),
       ENV.fetch("AZURE_SERVICEBUS_NAMESPACE", nil),
       ENV.fetch("AZURE_SERVICEBUS_ACCESS_KEY", nil),
-      # ENV.fetch("AZURE_SERVICEBUS_ISSUER",     nil)
       ENV.fetch('AZURE_MANAGEMENT_CERTIFICATE', nil),
       ENV.fetch('AZURE_SUBSCRIPTION_ID', nil)
     ].include?(nil)
 
-    abort "[ABORTING] Configure your environment to run the integration tests" if unset_environment
+    #abort "[ABORTING] Configure your environment to run the integration tests" if unset_environment
   end
 
   Rake::TestTask.new :unit do |t|

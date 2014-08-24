@@ -197,11 +197,7 @@ module Azure
         # 3. Upgrade the deployment if it is in a state where it can be upgraded
         if !deployment.exists?
           Loggerx.error_with_exit "#{error_msg_body} does not exist, and therefore cannot be upgraded."
-<<<<<<< HEAD
-        elsif deployment.is_transitioning
-=======
         elsif deployment.is_transitioning?
->>>>>>> Add 3 new web hooks inside "cloud_service_management_service.rb":
           Loggerx.error_with_exit "#{error_msg_body} is currently transitioning. Wait until it is done transitioning before doing an upgrade."
         else
           Loggerx.info info_msg

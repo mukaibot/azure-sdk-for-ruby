@@ -245,4 +245,4 @@ describe Azure::CloudServiceManagementService do
       subject.swap_deployment(cloud_service_name)
     end
   end
-end>>>>>>> Add 3 new web hooks inside "cloud_service_management_service.rb":
+end

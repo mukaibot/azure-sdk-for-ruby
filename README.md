@@ -3,7 +3,7 @@
 
 This project provides a Ruby Gem that makes it easy to access and manage Microsoft Azure Services like Storage, Service Bus and Virtual Machines.
 
-**note** this has been forked from the main Microsoft repo. This was after a bit of frustration that community contributions were being ignored.
+**Note** *this has been forked from the main Microsoft repo. This was after a bit of frustration that community contributions were being ignored.*
 
 This repo has the following enhancements over the original:
 * Provision VMs from custom images
@@ -11,8 +11,11 @@ This repo has the following enhancements over the original:
 * Access more attributes from virtual machines
 
 There are three goals for this repo:
+
 1. Encourage community involvement. Your comments and PRs will not be silently ignored (so please contribute!)
+
 2. Focus on respecting Ruby idioms 
+
 3. Reduce the time between releases
 
 Version 1.0 of this library will require Ruby 2.1 for named keywords, and will have a much more Ruby-like syntax for creating VMs.
@@ -74,7 +77,7 @@ Version 1.0 of this library will require Ruby 2.1 for named keywords, and will h
 You can install the azure rubygem package directly.
 
 ```bash
-gem install azure
+gem install azurex
 ```
 
 ## Download Source Code
@@ -82,7 +85,7 @@ gem install azure
 To get the source code of the SDK via **git** just type:
 
 ```bash
-git clone https://github.com/Azure/azure-sdk-for-ruby.git
+git clone https://github.com/mukaibot/azure-sdk-for-ruby.git
 cd ./azure-sdk-for-ruby
 ```
 Then, run bundler to install all the gem dependencies:
