@@ -17,22 +17,22 @@ require "date"
 require File.expand_path('../lib/azure/version', __FILE__)
 
 Gem::Specification.new do |s|
-  s.name    = "azure-plus"
+  s.name    = "azurex"
   s.version = Azure::Version
 
-  s.authors     = ["Microsoft Corporation", "AppFog"]
-  s.email       = "azureruby@microsoft.com"
-  s.description = "Windows Azure Client Library for Ruby"
+  s.authors     = ["Microsoft Corporation", "various individuals"]
+  s.email       = "timothy@mukaibo.com"
+  s.description = "Microsoft Azure Client Library for Ruby"
   s.summary     = "Non-Official ruby client library to consume Windows Azure services. 
     As of June 2014, the official gem witten by Microsoft(0.6.4) only covers a few methods 
-    from the vast Azure REST API. I needed more support(e.g. swapping, differentiating between 
-    'production' and 'staging' deployment, deploying .cspkg to new/existing cloud service, ...).
-    This project is a fork of https://github.com/nicolasdao/azure-sdk-for-ruby.git"
-  s.homepage    = "https://github.com/nicolasdao/azure-sdk-for-ruby.git"
+    from the vast Azure REST API. This gem has a number of enhancements over the under-developed
+    official project. Contributions are welcome! See the readme for details.
+    This project is a fork of https://github.com/azure/azure-sdk-for-ruby.git"
+  s.homepage    = "https://github.com/mukaibot/azure-sdk-for-ruby.git"
   s.license     = 'Apache License, Version 2.0'
   s.files       = `git ls-files`.split("\n")
 
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.0.0'
 
   s.add_runtime_dependency('nokogiri',   "~> 1.5")
   s.add_runtime_dependency("mime-types", "~> 1.0")

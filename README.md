@@ -1,8 +1,21 @@
 # Microsoft Azure SDK for Ruby
-[![Build Status](https://travis-ci.org/Azure/azure-sdk-for-ruby.png?branch=dev)](https://travis-ci.org/Azure/azure-sdk-for-ruby)
+[![Build Status](https://travis-ci.org/mukaibot/azure-sdk-for-ruby.png?branch=master)](https://travis-ci.org/mukaibot/azure-sdk-for-ruby)
 
+This project provides a Ruby Gem that makes it easy to access and manage Microsoft Azure Services like Storage, Service Bus and Virtual Machines.
 
-This project provides a Ruby package that makes it easy to access and manage Microsoft Azure Services like Storage, Service Bus and Virtual Machines.
+**note** this has been forked from the main Microsoft repo. This was after a bit of frustration that community contributions were being ignored.
+
+This repo has the following enhancements over the original:
+* Provision VMs from custom images
+* More webhooks for cloud services
+* Access more attributes from virtual machines
+
+There are three goals for this repo:
+1. Encourage community involvement. Your comments and PRs will not be silently ignored (so please contribute!)
+2. Focus on respecting Ruby idioms 
+3. Reduce the time between releases
+
+Version 1.0 of this library will require Ruby 2.1 for named keywords, and will have a much more Ruby-like syntax for creating VMs.
 
 # Library Features
 * Storage
