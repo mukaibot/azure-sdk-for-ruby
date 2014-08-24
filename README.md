@@ -446,6 +446,23 @@ options = {
 }
 virtual_machine_service.create_virtual_machine(params,options)
 
+#API usage to add new roles under cloud service creating VM. Example is an Ubuntu 14.04 VM with CustomData
+params = {
+  :vm_name => 'vm_name',
+  :cloud_service_name => 'cloud_service_name',
+  :vm_user => 'azureuser',
+  :image => 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB',
+  :password => 'ComplexPassword',
+}
+options = {
+  :storage_account_name => 'storage',
+  :private_key_file => '/home/data/private_key.key', #required for ssh
+  :certificate_file => '/home/data/pub_key.pem', #required for ssh
+  :vm_size => 'Small', #valid choices are (ExtraSmall Small Medium Large ExtraLarge A5 A6 A7 Basic_A0 Basic_A1 Basic_A2 Basic_A3 Basic_A4)
+  :custom_data => "#!/bin/sh\n\necho \"this is a shell script\" > /tmp/output\n",
+}
+virtual_machine_service.add_role(params, options)
+
 #API usage to add new roles under cloud service creating VM 
 #API add_role create multiple roles under the same cloud service. Atleast a single deployment should be created under a hosted service.
 params = {

@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #--------------------------------------------------------------------------
+require 'base64'
 require 'test_helper'
 
 describe Azure::VirtualMachineManagement::Serialization do
@@ -19,6 +20,7 @@ describe Azure::VirtualMachineManagement::Serialization do
 
   let(:vm_xml) { Nokogiri::XML(Fixtures['virtual_machine']) }
   let(:csn) { 'cloud-service-1' }
+  CUSTOM_DATA = "#!/bin/sh\n\necho \"this is a shell script\" > /tmp/output\n"
 
   describe '#virtual_machines_from_xml' do
 
@@ -123,6 +125,7 @@ describe Azure::VirtualMachineManagement::Serialization do
         cloud_service_name: 'cloud-service-name',
         tcp_endpoints: '80,3389:3390,85:85',
         availability_set_name: 'aval-set',
+        custom_data: CUSTOM_DATA,
         winrm_https_port: '5988',
         winrm_transport: ['http','https']
       }
@@ -172,6 +175,15 @@ describe Azure::VirtualMachineManagement::Serialization do
         public_port: '5988',
         local_port: '5986'
       )
+    end
+
+    it "returns an XML file with the CustomData encoded" do
+      params[:certificate] = {fingerprint: 'CFB8C256D2986559C630547F2D0'}
+      options[:os_type] = 'Linux'
+      result = subject.deployment_to_xml params, image, options
+      doc = Nokogiri::XML(result)
+      encoded_script = Base64.encode64(CUSTOM_DATA)
+      doc.css('Deployment RoleList Role ConfigurationSets ConfigurationSet CustomData').text.must_equal encoded_script
     end
   end
 

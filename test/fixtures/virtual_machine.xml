@@ -53,6 +53,11 @@ kZS1mYWNlNSI+DQogICAgPEluc3RhbmNlcyBjb3VudD0iMSIgLz4NCiAgPC9Sb2xlPg0KPC9TZXJ2aWN
       <OsVersion/>
       <RoleType>PersistentVMRole</RoleType>
       <ConfigurationSets>
+        <ConfigurationSet i:type="LinuxProvisioningConfigurationSet">
+          <ConfigurationSetType>LinuxProvisioningConfiguration</ConfigurationSetType>
+          <!-- Shell script: "#!/bin/sh\n\necho \"this is a shell script\" > /tmp/output\n" -->
+          <CustomData>IyEvYmluL3NoCgplY2hvICJ0aGlzIGlzIGEgc2hlbGwgc2NyaXB0IiA+IC90\nbXAvb3V0cHV0Cg==</CustomData>
+        </ConfigurationSet>
         <ConfigurationSet i:type="NetworkConfigurationSet">
           <ConfigurationSetType>NetworkConfiguration</ConfigurationSetType>
           <InputEndpoints>

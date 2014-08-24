@@ -79,6 +79,7 @@ module Azure
       # * +:storage_account_name+     - String. Name of storage account.
       # * +:cloud_service_name+       - String. Name of cloud service.
       # * +:deployment_name+          - String. A name for the deployment.
+      # * +:custom_data+              - String. Your custom data for the virtual machine. It will be base64 encoded as required. Cannot be longer than 64kb or Azure will reject it
       # * +:tcp_endpoints+            - String. Specifies the internal port and external/public port separated by a colon.
       #   You can map multiple internal and external ports by separating them with a comma.
       # * +:ssh_private_key_file+     - String. Path of private key file.
