@@ -112,7 +112,7 @@ module Azure
         validate_deployment_params(params, options)
         options[:deployment_name] ||= options[:cloud_service_name]
         Loggerx.info 'Creating deploymnent...'
-        options[:cloud_service_name] ||= generate_cloud_service_name(params[:vm_name])        
+        options[:cloud_service_name] ||= generate_cloud_service_name(params[:vm_name])
         optionals = {}
         if options[:virtual_network_name]
           virtual_network_service = Azure::VirtualNetworkManagementService.new
