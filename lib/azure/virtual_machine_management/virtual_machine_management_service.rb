@@ -122,7 +122,7 @@ module Azure
           else
             vnet = virtual_networks.first
             if !vnet.affinity_group.empty?
-              options[:affinity_group_name] = vnet.affinity_group
+              optionals[:affinity_group_name] = vnet.affinity_group
             else
               optionals[:location] = vnet.location
             end
