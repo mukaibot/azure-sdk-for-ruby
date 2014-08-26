@@ -183,7 +183,7 @@ module Azure
       def self.add_custom_data(xml, options)
         if options[:custom_data]
           custom_data = options[:custom_data]
-          unless custom_data.chomp[/==$/]
+          unless custom_data.resembles_base64?
             custom_data = Base64.encode64(custom_data) 
           end
           xml.CustomData custom_data
