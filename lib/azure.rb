@@ -14,6 +14,7 @@
 #--------------------------------------------------------------------------
 module Azure; end
 
+# The order that files are required in is important...
 require 'azure/core'
 require 'azure/blob/blob_service'
 require 'azure/queue/queue_service'
@@ -37,6 +38,8 @@ require 'azure/cloud_service_management/cloud_service_management_service'
 require 'azure/base_management/location'
 require 'azure/sql_database_management/sql_database_management_service'
 require 'azure/virtual_network_management/virtual_network_management_service'
+require 'core_ext/string'
+require 'core_ext/ip_addr'
 
 # add some aliases for convenience
 Azure::BlobService = Azure::Blob::BlobService
