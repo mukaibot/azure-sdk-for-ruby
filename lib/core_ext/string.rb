@@ -19,5 +19,9 @@ class String
       "\e[#{value}m" + self + "\e[0m"
     end
   end
+
+  def resembles_base64?
+    self.chomp.length % 4 == 0 && self.chomp =~ /^[A-Za-z0-9+\/=]+\Z/
+  end
 end
 
