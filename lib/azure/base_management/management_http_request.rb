@@ -35,7 +35,7 @@ module Azure
         @warn = false
         content_length = body ? body.bytesize.to_s : '0'
         @headers = {
-          'x-ms-version' => '2014-05-01',
+          'x-ms-version' => '2014-06-01',
           'Content-Type' => 'application/xml',
           'Content-Length' => content_length
         }
@@ -156,7 +156,7 @@ module Azure
       #
       # * +request_id+       - String.  x-ms-request-id response header of request
       #
-      # See: http://msdn.microsoft.com/en-us/library/windowsazure/ee460783.aspx
+      # See: http://msdn.microsoft.com/en-us/library/azure/ee460783.aspx
       #
       # Print Error or Success of Operation.
       def check_completion(request_id)
