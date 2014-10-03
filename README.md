@@ -9,6 +9,8 @@ This repo has the following enhancements over the original:
 * Provision VMs from custom images
 * More webhooks for cloud services
 * Access more attributes from virtual machines
+* CustomData for virtual machines
+* Support for the A8, A9 and 'D' series VM sizes
 
 There are three goals for this repo:
 
